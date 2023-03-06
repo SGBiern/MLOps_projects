@@ -1,0 +1,7 @@
+2023-03-02 22:43:12,847 Import data
+2023-03-02 22:43:12,871 Perform EDA
+2023-03-02 22:43:13,335 Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2023-03-02 22:43:13,335 NumExpr defaulting to 8 threads.
+2023-03-02 22:43:14,000 Encode categorical columns
+2023-03-02 22:43:14,772 Perform Feature Engineering and Split Train & Test data
+2023-03-02 22:43:14,783 Train and store model and results

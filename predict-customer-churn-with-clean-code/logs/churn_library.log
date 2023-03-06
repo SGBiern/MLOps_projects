@@ -1,0 +1,7 @@
+2023-03-05 23:22:56,669 Testing import_data: SUCCESS
+2023-03-05 23:22:57,049 Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2023-03-05 23:22:57,049 NumExpr defaulting to 8 threads.
+2023-03-05 23:22:57,669 Testing perform_eda: SUCCESS
+2023-03-05 23:22:58,548 Testing test_encoder_helper: SUCCESS
+2023-03-05 23:23:01,197 Testing perform_feature_engineering: SUCCESS
+2023-03-05 23:26:26,707 Testing testing_model: SUCCESS
