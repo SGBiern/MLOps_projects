@@ -104,7 +104,7 @@ lb = load_artifact("model/lb.pkl")
 
 # Root Path
 
-@app.get('/')
+@app.get('/') 
 async def root():
     return {
         'Hi': 'This app predicts whether income exceeds $50k/yr based on census data.'}
