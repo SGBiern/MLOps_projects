@@ -1,6 +1,0 @@
-[core]
-    remote = s3remote
-['remote "dvc-remote"']
-    url = /tmp/dvc-storage
-['remote "s3remote"']
-    url = s3://census-udacity
