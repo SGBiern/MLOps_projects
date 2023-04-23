@@ -6,7 +6,7 @@ Date: 6th Mar. 2023
 
 import os
 from fastapi import FastAPI
-from typing import Literal
+from typing_extensions import Literal
 import pandas as pd
 import numpy as np
 import uvicorn
@@ -103,7 +103,6 @@ encoder = load_artifact("model/encoder.pkl")
 lb = load_artifact("model/lb.pkl")
 
 # Root Path
-
 @app.get('/') 
 async def root():
     return {
@@ -154,11 +153,16 @@ async def predict(input: ModelInput):
         input_df, categorical_features=cat_features, encoder=encoder, lb=lb, training=False)
     y = inference(model, X)
     pred = lb.inverse_transform(y)[0]
+    
+    if pred==0:
+        output = 'under 50k'
+    else:
+        output = 'over 50k'
 
-    return {"Income prediction": pred}
+    return {"Income prediction": output}
 
 if __name__ == "__main__":
-    uvicorn.run("main:app", host="0.0.0.0", port=8001, reload=True)
+    uvicorn.run("main:app", host="0.0.0.0", port=10000, reload=True)
 
         
         

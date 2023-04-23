@@ -12,30 +12,30 @@ def test_get_root():
     r = client.get('/')
     assert r.status_code == 200
     assert r.json() == {
-        'Hi': 'This app predicts weather income exceeds $50k/yr based on census data.'}
+        "Hi": "This app predicts whether income exceeds $50k/yr based on census data."}
     
     
 def test_post_predict_up():
     r = client.post('/predict_income',  json={
-        "age": 37,
+        "age": 31,
         "workclass": "Private",
-        "fnlgt": 280464,
-        "education": "Some-college",
-        "education_num": 10,
-        "marital_status": "Married-civ-spouse",
-        "occupation": "Exec-managerial",
-        "relationship": "Husband",
-        "race": "Black",
-        "sex": "Male",
-        "capital_gain": 0,
+        "fnlgt": 45781,
+        "education": "Masters",
+        "education_num": 14,
+        "marital_status": "Never-married",
+        "occupation": "Prof-specialty",
+        "relationship": "Not-in-family",
+        "race": "White",
+        "sex":'Male',
+        "capital_gain": 14084,
         "capital_loss": 0,
-        "hours_per_week": 80,
+        "hours_per_week": 50,
         "native_country": "United-States"
     }
                    )
     
     assert r.status_code == 200
-    assert r.json() == {'Income prediction': '<50K'}
+    assert r.json() == {'Income prediction': 'over 50k'}
     
 def test_post_predict_down():
     r = client.post('/predict_income', json={
@@ -48,7 +48,7 @@ def test_post_predict_down():
         "occupation": "Adm-clerical",
         "relationship": "Not-in-family",
         "race": "White",
-        "sex": "Female",
+        "sex": 'Female',
         "capital_gain": 0,
         "capital_loss": 0,
         "hours_per_week": 40,
@@ -57,4 +57,4 @@ def test_post_predict_down():
                    )
     
     assert r.status_code == 200
-    assert r.json() == {"Income prediction": "<=50K"}
+    assert r.json() == {"Income prediction": "under 50k"}

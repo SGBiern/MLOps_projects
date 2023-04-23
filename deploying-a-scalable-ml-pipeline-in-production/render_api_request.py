@@ -20,11 +20,11 @@ features = {
     "native_country": "United-States"
 }
 
-app_url = "https://0.0.0.0:8001/predict_income"
+app_url = "https://render-deployment-v5l3.onrender.com/predict_income"
 
 r = requests.post(app_url, json=features)
 assert r.status_code == 200
 
-logging.info("Testing Heroku app")
+logging.info("Testing Render app")
 logging.info(f"Status code: {r.status_code}")
 logging.info(f"Response body: {r.json()}")
